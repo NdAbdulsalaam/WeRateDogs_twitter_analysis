@@ -1,11 +1,27 @@
-## Introduction
-> WeRateDogs is a Twitter account that rates people's dogs with a humorous comment about the dog. The account was started in 2015 by college student Matt Nelson, and has received international media attention both for its popularity and for the attention drawn to social media copyright law when it was suspended by Twitter for breaking these aforementioned laws. [Read more]('https://en.wikipedia.org/wiki/WeRateDogs')
+<img src = "https://th.bing.com/th/id/OIP.2LXwB7b0Ybp9-t_CkBBHwgHaD4?pid=ImgDet&rs=1" width = "1000"/>
 
-> The main aim of this project is centered on data wrangling. Although, little insights were explored. The raw datasets were then used to produce a master data that can be used for analysis.
+<h1 align = 'center'>WeRateDogs Twitter Handle Analysis</h1>
+<h2 align = 'center'>Updated: September 14</h2>
+
+# Overview
+- WeRateDogs is a Twitter account that rates people's dogs with a humorous comment about the dog. The account was started in 2015 by college student Matt Nelson, and has received international media attention both for its popularity and for the attention drawn to social media copyright law when it was suspended by Twitter for breaking these aforementioned laws. [Read more]('https://en.wikipedia.org/wiki/WeRateDogs')
+
+- The main objective of this project is data wrangling. In this project, I did web scraping using the Request library and Tweepy. I also performed little exploratory and explanatory analysis, found insights and suggested ways to increase tweet retweeting.
 
 
-## Exploratory Analysis
-> This project make use of three data sets. The ‘twitter_archive_enhanced.csv’ which was downloaded directly from the ‘WeRateDogs’ twitter archive data, the ‘image_predictions.tsv’ that was downloaded from the tweet image prediction with the use of the request library, and lastly, the tweets using twitter API (tweepy). Data quality issues that were identified include:
+# Exploratory Analysis <sup>[1](wrangle_act.ipynb)</sup>
+## Data Gathering:  
+This project required gathering three data sets. The method used to gather each data was different and are as follows.
+
+- Twitter archive file: This can be downloaded manually or programmatically with the use of the Request library
+
+- The tweet image predictions: This can only be downloaded programmatically using the Request library because the file `image_predictions.tsv` is hosted on Udacity's servers and cannot be accessed manually.
+
+- Tweets: Each tweet's retweet count and favorite ("like") count at minimum, and any additional data found to be interesting are scraped. This is done by:
+    - Extracting the tweet IDs in the WeRateDogs Twitter archive and store in another file (tweet_id.txt)
+    - Quering the Twitter API for each tweet's JSON data using Python's Tweepy library and store the data in another file (tweet_json.txt)
+
+## Data Quality Issues
 
 **In the `archive` table**
 - Change the datatype for some of the columns e.g timestamp
@@ -21,21 +37,37 @@
 - Extract the date from Created_at column
 - Rename the Created_at column as Timestamp to bridge uniformity
 
-**Data tidiness**
+**Data Tidiness**
 - P1, P2, and P3 should be formatted properly in the `image` table
 - Remove html tags form the source column in the `archive` table
 - Tweet_id in `archive` table duplicated in `image` and `tweet` tables
 
-A new dataset named 'twitter_archive_master' was later genrated, by merging the datasets named above on tweet_id, after all the steps listed above were done. While uniformity of the column names is crucial for readability, it is also important to enable merging of the datasets. Note that the source link in the `archive` table was dimmed neccessary to be extracted from the html tag so as make it more humnan readable and loadable in the browser.
-Although, not all the data quality and tideness issues were addressed (e.g melting the stages of the dog: `doggo`, `puppo`, `floofer ` and `pupper` should be in a single column), most all the important cleanings were done. [Read more]('wrangle_report.ipynb')
+A new data set named 'twitter_archive_master' was produced by merging the three data sets named above, on tweet_id. [Read more]('wrangle_report.ipynb')
 
 
 
-## Explanatory Analysis
-> Favorite count and retweet count has been found to reach their peak in June. This can be rationally attributed to the fact that dog festival normally occur at the period. Followed by this month is the month of January for favorite count and December for retweet count. While the third month for the counts is the reverse of their second months (December and January respectively). This must have been due to the fact that months, January and December, are festive periods filled with holidays
+# Explanatory Analysis <sup>[2](wrangle_report.ipynb)</sup>
+## Insights
+- Favorite count and retweet count has been found to reach their peaks in June. This can be rationally attributed to the fact that dog festival normally occur during this period. Followed by this month is January and December for favorite count and retweet count respectively. Third on the list is also December and January (respectively). This may be due to increased festive activities during the perionds
+  
+- Saturday usually has the highest favorite count  followed by Friday. This is probably due to less busy schedules on these days (weekend).
 
-> It was gathered from these insights that the day of the week that normally receive the highest favorite count is Saturday followed by Friday. This may be due to the fact that people will be less busy on these days (weekend). Therefore, it will be wise to target these days for tweet.
+- Also, as expected, the correlation between favorite count and retweet count is, positively, very strong (0.86). Hence, favorite tweets are more likey to be retweeted.
 
-> Also, as expected, the correlation relationship between favorite count and retweet count is positive and close to 1 (0.86). That is, the higher the favorite count, the higher the retweet count and vice versa and that this correlation is so strong.
+- On the other hand, the correlation between the each feature (favorite count and retweet count) and numerator rating is and denominator rating is very weak, positive for the former and negative for the latter.
 
-> However, the correlations between these features (favorite count and retweet count) with rating numerator and rating denominator are weak. They are positive for the former and negative for the later. [Read more]('act_report.ipynb')
+## Recommendations
+- It is prefferable that posts are targeted on Fridays and Saturdays.
+- Dog events should be hosted around June, December or January.
+- Another factor should be used in predicting probability of retweeing as the numerator and denominator ratings are not effective.
+
+# Resources
+- [Wikipedia](https://en.wikipedia.org/wiki/WeRateDogs)
+
+- [Python functions – Avoid repeating code](https://hub.packtpub.com/python-functions-avoid-repeating-code/)
+
+- [Automate the boring stuff with python](https://automatetheboringstuff.com/)
+- [W3school](https://www.w3schools.io/file/markdown-super-sub-script/)
+
+## Access on
+[![Kaggle Badge](https://img.shields.io/badge/-Kaggle-0e76a8?style=flat&labelColor=0e76a8&logo=dev.to&logoColor=white)](https://www.kaggle.com/code/nurudeenabdulsalaam/weratedogs-twitter-analysis)
