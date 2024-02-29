@@ -1,7 +1,7 @@
 <img src = "https://th.bing.com/th/id/OIP.2LXwB7b0Ybp9-t_CkBBHwgHaD4?pid=ImgDet&rs=1" width = "1000"/>
 
 <h1 align = 'center'>WeRateDogs Twitter Handle Analysis</h1>
-<h2 align = 'center'>Updated: September 14</h2>
+<!-- <h2 align = 'center'>Updated: September 14</h2> -->
 
 # Overview
 - WeRateDogs is a Twitter account that rates people's dogs with a humorous comment about the dog. The account was started in 2015 by college student Matt Nelson, and has received international media attention both for its popularity and for the attention drawn to social media copyright law when it was suspended by Twitter for breaking these aforementioned laws. [Read more]('https://en.wikipedia.org/wiki/WeRateDogs')
