@@ -1,4 +1,4 @@
-<img src = "https://th.bing.com/th/id/OIP.2LXwB7b0Ybp9-t_CkBBHwgHaD4?pid=ImgDet&rs=1" width = "1000"/>
+<img src = "we-rate-dogs.jpg" width = "1000"/>
 
 <h1 align = 'center'>WeRateDogs Twitter Handle Analysis</h1>
 <!-- <h2 align = 'center'>Updated: September 14</h2> -->
