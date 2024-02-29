@@ -46,7 +46,7 @@ A new data set named 'twitter_archive_master' was produced by merging the three 
 
 
 
-# Explanatory Analysis <sup>[2](wrangle_report.ipynb)</sup>
+# Explanatory Analysis <sup>[2](act_report.ipynb)</sup>
 ## Insights
 - Favorite count and retweet count has been found to reach their peaks in June. This can be rationally attributed to the fact that dog festival normally occur during this period. Followed by this month is January and December for favorite count and retweet count respectively. Third on the list is also December and January (respectively). This may be due to increased festive activities during the perionds
   
